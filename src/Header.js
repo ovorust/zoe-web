@@ -1,6 +1,6 @@
 import React from "react";
 import "./Header.css";
-import logo from './media/zoe-logo.png'
+import logo from './media/zoe-header-logo.png'
 import logo_mobile from './media/logo.png'
 
 function Header() {
