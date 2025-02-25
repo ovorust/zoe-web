@@ -134,7 +134,7 @@ function Chat() {
         {messages.length === 0 ? (
           <div className="empty-message">
             Sobre o que vamos falar hoje?
-            <img className="logo-img" src={logo} alt="Logo" />
+            <img draggable="false" className="logo-img" src={logo} alt="Logo" />
             </div>
         ) : (
           messages.map((msg, index) => (
@@ -163,7 +163,7 @@ function Chat() {
             rows={1}
           />
           <button className="academic-button" onClick={handleButtonClick} style={{ borderColor: buttonColor }}>
-            <img className="academic-image" src={isAcademicMode ? academic_icon_clicked : academic_icon} alt="Acadêmico" />
+            <img draggable="false" className="academic-image" src={isAcademicMode ? academic_icon_clicked : academic_icon} alt="Acadêmico" />
             <p style={{color: buttonColor}}>Acadêmico</p>
           </button>
           <button className="chat-send-button" onClick={handleSendMessage}>►</button>

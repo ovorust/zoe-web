@@ -153,6 +153,7 @@
     align-items: center;
     font-size: 20px;
     color: #535353;
+    pointer-events: none;
 }
 
 .zoe-message {

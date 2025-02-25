@@ -7,8 +7,8 @@ function Header() {
   return (
     <div className="header">
       <div>
-        <img className="logo-img-hdr" src={logo} alt="Logo" />
-        <img src={logo_mobile} class="mobile-logo" alt="Logo"/>
+        <img draggable="false" className="logo-img-hdr" src={logo} alt="Logo" />
+        <img draggable="false" src={logo_mobile } class="mobile-logo" alt="Logo"/>
       </div>
       
       <p className="header-center">Zoe GPT 4.0</p>
