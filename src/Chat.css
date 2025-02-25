@@ -227,7 +227,7 @@
 
 @media (max-width: 750px) {
     .chat-bubble {
-        max-width: 95%;
+        max-width: 85%;
         margin-right: 10px;
     }
 

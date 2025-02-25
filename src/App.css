@@ -19,7 +19,7 @@ body::-webkit-scrollbar {
 }
 
 .container-message {
-width: 700px;
+width: 800px;
 height: 90vh;
 margin-top: 15px;
 padding: 0;
@@ -34,14 +34,21 @@ scrollbar-width: none;
 
 @media (max-width: 768px) {
   .container-message {
-    width: 95%;
+    width: 650px;
+    height: 85vh;
+  }
+}
+
+@media (max-width: 700px) {
+  .container-message {
+    width: 500px;
     height: 85vh;
   }
 }
 
 @media (max-width: 480px) {
   .container-message {
-    width: 100%;
+    width: 320px;
     height: 80vh;
   }
 }

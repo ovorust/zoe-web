@@ -14,7 +14,7 @@
   },
   "options": {
     "allowedHosts": ["localhost", ".localhost", "https://zoe-web.onrender.com"],
-    "proxy": "https://zoe-web.onrender.com/"
+    "proxy": "localhost"
   },
   "scripts": {
     "start": "react-scripts start",

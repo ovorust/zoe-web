@@ -1,9 +1,12 @@
 from flask import Flask, jsonify, request
 from flask_cors import CORS
 import google.generativeai as genai
+import os
 
 app = Flask(__name__)
-CORS(app, resources={r"/*": {"origins": "http://localhost:3000"}})  # Habilita CORS para a origem específica
+CORS(app, resources={r"/*": {"origins": ["https://zoe-web.onrender.com", "https://zoe-web-delta.vercel.app"]}})  # Habilita CORS para a origem específica
+
+
 
 # Configurar a API do Gemini
 genai.configure(api_key='AIzaSyDG7nEpQ6eeqiyWhIeUytZaI4Gqs9nOQZQ')
