@@ -9,18 +9,38 @@ function Chat() {
   const [messages, setMessages] = useState([]);
   const [isAcademicMode, setIsAcademicMode] = useState(false);
   const [isLoading, setIsLoading] = useState(false); // Estado para controlar a requisição
+  const [randomPhrase, setRandomPhrase] = useState(""); // Estado para armazenar a frase aleatória
   const textAreaRef = useRef(null);
   const messagesEndRef = useRef(null); // Ref para o fim das mensagens
 
   const [buttonColor, setButtonColor] = useState('#797979'); // Cor padrão
 
-  const academicPrompt = 'Responda de forma acadêmica, utilizando uma linguagem clara e acessível, como se estivesse elaborando um trabalho de faculdade ou respondendo a uma questão de prova. Assegure-se de que sua resposta contenha definições, explicações e exemplos pertinentes, bem como uma linguagem acadêmica e didática.'
+  const academicPrompt = 'Responda de forma acadêmica, ...'; // Truncado para brevidade
+  const phrases = [
+    "Sobre o que vamos falar hoje?",
+    "Como posso te ajudar?",
+    "Qual é a boa de hoje?",
+    "O que você gostaria de discutir?",
+    "Vamos começar uma conversa!",
+    "Qual será o tema da nossa conversa hoje?",
+    "O que te traz por aqui hoje?",
+    "Tem algum tema específico em mente?",
+    "Com qual assunto posso te ajudar?",
+    "Qual será nosso próximo assunto?",
+    "Alguma dúvida para hoje?"
+    
+  ];
+
   const handleButtonClick = () => {
     // Alterna o modo acadêmico
     setIsAcademicMode(!isAcademicMode);
     // Alterna a cor do botão
     setButtonColor(buttonColor === '#797979' ? '#392480' : '#797979');
   };
+
+  useEffect(() => {
+    setRandomPhrase(phrases[Math.floor(Math.random() * phrases.length)]);
+  }, []);
 
   useEffect(() => {
     adjustHeight();
@@ -118,10 +138,10 @@ function Chat() {
   };
 
   const formatMessage = (text) => {
-    const parts = text.split(/(\*\*[^**]+\*\*)/g);
+    const parts = text.split(/(\*[^*]+\*)/g);
     return parts.map((part, index) => 
-      part.startsWith("**") && part.endsWith("**") ? 
-      <strong key={index}>{part.slice(2, -2)}</strong> : 
+      part.startsWith("*") && part.endsWith("*") ? 
+      <div key={index} style={{ margin: '10px 0' }}>- {part.slice(1, -1)}</div> : 
       part
     );
   };
@@ -133,9 +153,9 @@ function Chat() {
       <div className="chat-messages">
         {messages.length === 0 ? (
           <div className="empty-message">
-            Sobre o que vamos falar hoje?
+            {randomPhrase}
             <img draggable="false" className="logo-img" src={logo} alt="Logo" />
-            </div>
+          </div>
         ) : (
           messages.map((msg, index) => (
             <div
