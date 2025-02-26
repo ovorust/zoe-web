@@ -19,9 +19,9 @@ function Header() {
     setButtonColor(buttonColor === "#fff" ? "#392480" : "#fff");
     try {
       if (!isAcademicMode) {
-        setAcademicMessage("Responda de forma acadêmica, como um especialista no assunto, com muita didática, como se estivesse fazendo um trabalho de faculdade ou respondendo uma quuestão de uma prova.")
+        setAcademicMessage("Responda de forma acadêmica, como um especialista no assunto, com muita didática, como se estivesse fazendo um trabalho de faculdade ou respondendo uma quuestão de uma prova, de forma séria e objetiva.")
       }else {
-        setAcademicMessage("Responda no modo Zoe normal.");
+        setAcademicMessage("Saindo do modo acadêmico.");
       }
       const response = await fetch('https://zoe-web.onrender.com/chat', {
         method: 'POST',
@@ -30,7 +30,6 @@ function Header() {
         },
         body: JSON.stringify({ message: academicMessage }),
       });
-      const data = await response.json();
     } catch (error) {
       console.error("Error sending message:", error);
     }
