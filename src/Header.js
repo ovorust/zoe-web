@@ -11,8 +11,8 @@ function Header() {
         <img draggable="false" src={logo_mobile } class="mobile-logo" alt="Logo"/>
       </div>
       
-      <p className="header-center">Zoe GPT 4.0</p>
-      <p className="header-right">v1.0</p>
+      <p className="header-center">Zoe AI</p>
+      <p className="header-right">v2.0</p>
     </div>
   );
 }

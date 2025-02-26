@@ -4,11 +4,11 @@ import logo from './media/zoe-logo.png';
 import academic_icon from './media/academic.png';
 import academic_icon_clicked from './media/academic-clicked.png';
 
-
 function Chat() {
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState([]);
   const [isAcademicMode, setIsAcademicMode] = useState(false);
+  const [isLoading, setIsLoading] = useState(false); // Estado para controlar a requisição
   const textAreaRef = useRef(null);
   const messagesEndRef = useRef(null); // Ref para o fim das mensagens
 
@@ -84,11 +84,10 @@ function Chat() {
       { text: originalMessage, sender: "user" }
     ]);
 
+    setIsLoading(true); // Define o estado de carregamento como true
 
     // Envia a mensagem para o backend Flask
     try {
-  
-
       const response = await fetch('https://zoe-web.onrender.com/chat', {
         method: 'POST',
         headers: {
@@ -107,6 +106,7 @@ function Chat() {
       console.error("Error sending message:", error);
     }
 
+    setIsLoading(false); // Define o estado de carregamento como false
     setMessage(""); // Limpa o campo após enviar
   };
 
@@ -146,6 +146,13 @@ function Chat() {
               {formatMessage(msg.text.replace("[zoe]", "").trim())}
             </div>
           ))
+        )}
+        {isLoading && (
+          <div className="chat-bubble zoe-message" id="zoe-message-container">
+            <div className="loading">
+              <span>•</span><span>•</span><span>•</span>
+            </div>
+          </div>
         )}
         <div ref={messagesEndRef} /> {/* Div para o scroll */}
       </div>
