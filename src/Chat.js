@@ -14,7 +14,7 @@ function Chat() {
 
   const [buttonColor, setButtonColor] = useState('#797979'); // Cor padrão
 
-  const academicPrompt = 'Responda de forma acadêmica, utilizando uma linguagem clara e acessível, como se estivesse elaborando um trabalho de faculdade ou respondendo a uma questão de prova. Assegure-se de que sua resposta contenha definições, explicações e exemplos pertinentes.'
+  const academicPrompt = 'Responda de forma acadêmica, utilizando uma linguagem clara e acessível, como se estivesse elaborando um trabalho de faculdade ou respondendo a uma questão de prova. Assegure-se de que sua resposta contenha definições, explicações e exemplos pertinentes, bem como uma linguagem acadêmica e didática.'
   const handleButtonClick = () => {
     // Alterna o modo acadêmico
     setIsAcademicMode(!isAcademicMode);
