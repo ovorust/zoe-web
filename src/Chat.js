@@ -173,7 +173,9 @@ function Chat() {
             <img draggable="false" className="academic-image" src={isAcademicMode ? academic_icon_clicked : academic_icon} alt="Acadêmico" />
             <p style={{color: buttonColor}}>Acadêmico</p>
           </button>
-          <button className="chat-send-button" onClick={handleSendMessage}>➤</button>
+          <button className="chat-send-button" onClick={handleSendMessage}>
+            <p className="arrow">➤</p>
+          </button>
         </div>
       </div>
       <div className="clear-button">
