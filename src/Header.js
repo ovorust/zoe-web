@@ -7,7 +7,7 @@ import { FiMenu, FiX } from "react-icons/fi";
 function Header() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isAcademicMode, setIsAcademicMode] = useState(false);
-  const [buttonColor, setButtonColor] = useState("#797979");
+  const [buttonColor, setButtonColor] = useState("#fff");
  const [academicMessage, setAcademicMessage] = useState("false");
 
   const toggleSidebar = () => {
