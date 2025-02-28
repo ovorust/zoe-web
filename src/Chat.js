@@ -189,7 +189,7 @@ function Chat() {
             placeholder="Digite sua mensagem..."
             rows={1}
           />
-          <button className="academic-button" onClick={handleButtonClick} style={{ borderColor: buttonColor }}>
+          <button className="academic-button" onClick={handleButtonClick} style={{ borderColor: buttonColor, display: 'none' }}>
             <img draggable="false" className="academic-image" src={isAcademicMode ? academic_icon_clicked : academic_icon} alt="Acadêmico" />
             <p style={{color: buttonColor}}>Acadêmico</p>
           </button>
